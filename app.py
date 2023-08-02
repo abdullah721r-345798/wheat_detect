@@ -67,7 +67,10 @@ def imageInput(device, src):
                     im_base64 = Image.fromarray(im)
                     im_base64.save(os.path.join('data/outputs', os.path.basename(image_file)))
 
-                    
+                        
+                    st.write(pred)
+                    original_title = '<p style="font-family:Courier; color:Cyan; font-size: 14px;">AIRSA\'s goal is to provide statistics on road safety using AI recognition. The AI model recognizes key factors of road safety (such as traffic light presence and stop sign presence) that are used in the safety formula. Other outputs such as road width, lane count, and individual lane width are factors of the safety formula.</p>'
+                    st.markdown(original_title, unsafe_allow_html=True)
 
                     # --Display prediction
                     img_ = Image.open(os.path.join('data/outputs', os.path.basename(image_file)))
