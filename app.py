@@ -59,9 +59,6 @@ def imageInput(device, src):
                 # call Model prediction--
                 model = torch.hub.load('ultralytics/yolov5', 'custom', path='models/last.pt', force_reload=True)
                 pred = model(image_file)
-                st.write(pred)
-                original_title = '<p style="font-family:Courier; color:Black; font-size: 14px;">AIRSA\'s goal is to provide statistics on road safety using AI recognition. The AI model recognizes key factors of road safety (such as traffic light presence and stop sign presence) that are used in the safety formula. Other outputs such as road width, lane count, and individual lane width are factors of the safety formula.</p>'
-                st.markdown(original_title, unsafe_allow_html=True)w
                 pred.render()  # render bbox in image
                 for im in pred.ims:
                     im_base64 = Image.fromarray(im)
@@ -75,6 +72,10 @@ def imageInput(device, src):
                     # --Display prediction
                     img_ = Image.open(os.path.join('data/outputs', os.path.basename(image_file)))
                     st.image(img_, caption='Model Prediction(s)')
+                        
+                    st.write(pred)
+                    original_title = '<p style="font-family:Courier; color:Black; font-size: 14px;">AIRSA\'s goal is to provide statistics on road safety using AI recognition. The AI model recognizes key factors of road safety (such as traffic light presence and stop sign presence) that are used in the safety formula. Other outputs such as road width, lane count, and individual lane width are factors of the safety formula.</p>'
+                    st.markdown(original_title, unsafe_allow_html=True)
 
 
 
