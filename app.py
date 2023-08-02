@@ -80,8 +80,8 @@ def main():
     datasrc = st.sidebar.radio("Select input source.", ['From test set.', 'Upload your own data.'])
 
     
-                    original_title = '<p style="font-family:Courier; color:Cyan; font-size: 14px;">AIRSA\'s goal is to provide statistics on road safety using AI recognition. The AI model recognizes key factors of road safety (such as traffic light presence and stop sign presence) that are used in the safety formula. Other outputs such as road width, lane count, and individual lane width are factors of the safety formula.</p>'
-                    st.markdown(original_title, unsafe_allow_html=True)
+    original_title = '<p style="font-family:Courier; color:Cyan; font-size: 14px;">AIRSA\'s goal is to provide statistics on road safety using AI recognition. The AI model recognizes key factors of road safety (such as traffic light presence and stop sign presence) that are used in the safety formula. Other outputs such as road width, lane count, and individual lane width are factors of the safety formula.</p>'
+    st.markdown(original_title, unsafe_allow_html=True)
 
     # option = st.sidebar.radio("Select input type.", ['Image', 'Video'])
     if torch.cuda.is_available():
