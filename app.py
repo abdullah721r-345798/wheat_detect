@@ -43,6 +43,14 @@ def imageInput(device, src):
             img_ = Image.open(outputpath)
             with col2:
                 st.image(img_, caption='Model Prediction(s)', use_column_width='always')
+                
+            if image_file is not None and submit:
+                
+                st.write(pred)
+            else:
+                
+                original_title = '<p style="font-family:Courier; color:Black; font-size: 14px;">No results.</p>'
+                st.markdown(original_title, unsafe_allow_html=True)
 
     elif src == 'From test set.':
         # Image selector slider
